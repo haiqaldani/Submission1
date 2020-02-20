@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+        <string name="app_name" >Katalog Film</string>
+        <string name="hello_blank_fragment">Halo Fragmen Kosong</string>
+        <string name="tab1">Film</string>
+        <string name="tab2">Tampilan TV</string>
+        <string name="tab3">Favorit</string>
+        <string name="title_activity_settings" >Pengaturan</string>
+        <string name="settings" >Pengaturan</string>
+    </resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_listfilm"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/rounded_view"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/judul_film"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/gbr_film"
+        android:text="Judul Film"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tahun_film"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/judul_film"
+        android:layout_toRightOf="@id/gbr_film"
+        android:text="tahun" />
+
+    <TextView
+        android:id="@+id/genre_film"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/gbr_film"
+        android:layout_below="@id/tahun_film"
+        android:text="genre : " />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/gbr_film"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/poster_venom" />
+
+</RelativeLayout>

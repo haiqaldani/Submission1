@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="LightTheme">
+        <item name="android:colorBackground">@color/cardview_light_background</item>
+        <item name="android:textColor">@color/cardview_dark_background</item>
+    </style>
+
+<!--    <style name="LightTheme.Background">-->
+<!--        <item name="android:background">@drawable/index2</item>-->
+<!--        <item name="android:colorBackground">@color/cardview_light_background</item>-->
+<!--        <item name="android:textColor">@color/dongker</item>-->
+
+<!--    </style>-->
+
+    <style name="DarkTheme">
+        <item name="android:background">@color/cardview_dark_background</item>
+        <item name="android:textColor">@color/cardview_light_background</item>
+    </style>
+
+<!--    <style name="DarkTheme.Background">-->
+<!--        <item name="android:background">@drawable/ind2</item>-->
+<!--        <item name="android:textColor">@color/cardview_light_background</item>-->
+<!--    </style>-->
+
+</resources>
