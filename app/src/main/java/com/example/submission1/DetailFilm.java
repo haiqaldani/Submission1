@@ -68,12 +68,12 @@ public class DetailFilm extends AppCompatActivity {
             }
         } else {
             if (item.getItemId() == R.id.action_delete_favorite) {
-                int result = favoriteHelper.deleteFavorite(movie.getId());
+                int result = favoriteHelper.deleteFavorite(film.getId());
                 if (result > 0) {
                     item.setIcon(R.drawable.ic_star);
                     Toast.makeText(DetailFilm.this, getResources().getString(R.string.success_delete_favorite), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(DetailFilm.this, getResources().getString(R.string.failed__delete_favorite), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DetailFilm.this, getResources().getString(R.string.failed_delete_favorite), Toast.LENGTH_SHORT).show();
                 }
             }
         }

@@ -11,4 +11,9 @@
     <string name="favorite_tv_show">TV Show Favorite</string>
     <string name="favorite_movie">Movie Favorite</string>
     <string name="empty_data">Data Kosong</string>
+    <string name="success_add_favorite">Berhasil Ditambahkan ke Favorite</string>
+    <string name="favorite_is_exist">Kamu Sudah Menambahkan Item Ini</string>
+    <string name="failed_add_favorite">Gagal Mendambahkan Item ke Favorite</string>
+    <string name="success_delete_favorite">Berhasil Menghapus dari Favorite</string>
+    <string name="failed_delete_favorite">Gagal Menghapus dari Favorite</string>
 </resources>

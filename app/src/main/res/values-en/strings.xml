@@ -12,4 +12,8 @@
     <string name="favorite_movie">Movie Favorite</string>
     <string name="empty_data">No Data</string>
     <string name="success_add_favorite">Success Add Favorite</string>
+    <string name="favorite_is_exist">You Have Added This Item</string>
+    <string name="failed_add_favorite">Failed Add Favorite</string>
+    <string name="success_delete_favorite">Success Delete Favorite</string>
+    <string name="failed_delete_favorite">Failed Delete Favorite</string>
 </resources>
