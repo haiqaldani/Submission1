@@ -5,6 +5,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +18,8 @@ import java.util.ArrayList;
 
 public class DetailFilm extends AppCompatActivity {
     public static String EXTRA_FILM = "film";
-    
+    private Film film;
+    private FavoriteHelper favoriteHelper;
     TextView judul, sinopsis, genre, tahun;
     ImageView poster;
 
@@ -52,7 +54,29 @@ public class DetailFilm extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        finish();
+        if (item.getItemId() == R.id.action_add_favorite) {
+            if (!favoriteHelper.isExist(movie)) {
+                long result = favoriteHelper.insertFavorite(film);
+                if (result > 0) {
+                    item.setIcon(R.drawable.ic_star_clicked);
+                    Toast.makeText(DetailFilm.this, getResources().getString(R.string.success_add_favorite), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(DetailFilm.this, getResources().getString(R.string.failed_add_favorite), Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(DetailFilm.this, getResources().getString(R.string.favorite_is_exist), Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            if (item.getItemId() == R.id.action_delete_favorite) {
+                int result = favoriteHelper.deleteFavorite(movie.getId());
+                if (result > 0) {
+                    item.setIcon(R.drawable.ic_star);
+                    Toast.makeText(DetailFilm.this, getResources().getString(R.string.success_delete_favorite), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(DetailFilm.this, getResources().getString(R.string.failed__delete_favorite), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
         return super.onOptionsItemSelected(item);
     }
 }
