@@ -1,5 +1,6 @@
 package com.example.submission1;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +15,37 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
-    private ArrayList<Film> list_tvshow = new ArrayList<>();
+    private Context context;
+    private ArrayList<Film> listMovie;
     private onItemKlik onItemKlik;
 
     public void setData(ArrayList<Film> items) {
-        list_tvshow.clear();
-        list_tvshow.addAll(items);
+        listMovie.clear();
+        listMovie.addAll(items);
         notifyDataSetChanged();
+    }
+
+    public MovieAdapter(ArrayList<Film> listFilm) {
+        this.listMovie = listFilm;
+    }
+
+
+    public MovieAdapter(Context context) {
+        this.context = context;
     }
 
     void setOnItemKlik(onItemKlik onItemKlik) {
         this.onItemKlik = onItemKlik;
+    }
+
+    public void setListFavorite(ArrayList<Film> listMovie) {
+        this.listMovie = new ArrayList<>();
+        this.listMovie.addAll(listMovie);
+        notifyDataSetChanged();
+    }
+
+    public ArrayList<Film> getListMovie() {
+        return listMovie;
     }
 
     @NonNull
@@ -36,12 +57,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
-        holder.bind(list_tvshow.get(position));
+        holder.bind(listMovie.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return list_tvshow.size();
+        return listMovie.size();
     }
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {

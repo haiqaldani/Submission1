@@ -7,4 +7,8 @@
         <string name="tab3">Favorit</string>
         <string name="title_activity_settings" >Pengaturan</string>
         <string name="settings" >Pengaturan</string>
-    </resources>
+        <string name="add_favorite">Favorite</string>
+    <string name="favorite_tv_show">TV Show Favorite</string>
+    <string name="favorite_movie">Movie Favorite</string>
+    <string name="empty_data">Data Kosong</string>
+</resources>

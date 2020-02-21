@@ -6,4 +6,8 @@
     <string name="tab3" translatable="false">Favorite</string>
     <string name="title_activity_settings" translatable="false">Settings</string>
     <string name="settings">Settings</string>
+    <string name="add_favorite">Favorite</string>
+    <string name="favorite_tv_show">TV Show Favorite</string>
+    <string name="favorite_movie">Movie Favorite</string>
+    <string name="empty_data">No Data</string>
 </resources>

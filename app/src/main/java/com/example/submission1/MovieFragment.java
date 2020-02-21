@@ -24,58 +24,24 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class MovieFragment extends Fragment {
-
+    public ArrayList<Film> listFilm = new ArrayList<>();
+    public ProgressBar progressBar;
+    private RecyclerView rvMovie;
     private MovieAdapter movieAdapter;
-    private RecyclerView RVMovie;
-    private ProgressBar progressBar;
     private MainViewModelMovie mainViewModel;
-    private ArrayList<Film> l = new ArrayList<>();//membuat arraybaru
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModelMovie.class);
-        mainViewModel.setMovie();
-        mainViewModel.getMovie().observe(this, new Observer<ArrayList<Film>>() {
-            @Override
-            public void onChanged(final ArrayList<Film> films) {
-                if (films != null){
-                    movieAdapter.setData(films);
-                    showLoading(false);
-        OnItemClickSupport.addTo(RVMovie).setOnItemClickListener((recyclerView, position, v) ->
-                showDetail(films.get(position)));
-                }
-            }
-        });
+    public MovieFragment() {
     }
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModelMovie.class);
+        mainViewModel.setMovie();
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_movie, container, false);
-        rootView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int ip = RVMovie.getChildLayoutPosition(view);
-                Film item = l.get(ip);
-                Toast.makeText(getContext(), item.getJudul(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        RVMovie = rootView.findViewById(R.id.rv_movie);
-        progressBar = rootView.findViewById(R.id.progressBarmovies);
-        RVMovie.setHasFixedSize(true);
-
-        RVMovie.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, rootView.isInLayout()));
-        movieAdapter = new MovieAdapter();
-        movieAdapter.notifyDataSetChanged();
-        RVMovie.setAdapter(movieAdapter);
-
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_movie, container, false);
 
     }
 
@@ -90,6 +56,13 @@ public class MovieFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        rvMovie = view.findViewById(R.id.rv_movie);
+        progressBar = view.findViewById(R.id.progressBarmovies);
+        rvMovie.setHasFixedSize(true);
+
+        movieAdapter = new MovieAdapter(listFilm);
+        rvMovie.setLayoutManager(new LinearLayoutManager(getContext()));
+//        rvMovie.setAdapter(listMovieAdapter);
     }
 
     private void showDetail(Film film) {

@@ -40,7 +40,7 @@ public class Film implements Parcelable {
         }
     };
 
-    Film() {
+    public Film() {
 
     }
 
