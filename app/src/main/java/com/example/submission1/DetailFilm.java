@@ -55,7 +55,7 @@ public class DetailFilm extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_add_favorite) {
-            if (!favoriteHelper.isExist(movie)) {
+            if (!favoriteHelper.isExist(film)) {
                 long result = favoriteHelper.insertFavorite(film);
                 if (result > 0) {
                     item.setIcon(R.drawable.ic_star_clicked);

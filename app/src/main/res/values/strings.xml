@@ -15,4 +15,5 @@
     <string name="success_delete_favorite">Success Delete Favorite</string>
     <string name="failed_delete_favorite">Failed Delete Favorite</string>
     <string name="favorite_is_exist">You Have Added This Item</string>
+    <string name="delete">Delete Favorite</string>
 </resources>

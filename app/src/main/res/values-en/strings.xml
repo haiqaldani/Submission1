@@ -16,4 +16,5 @@
     <string name="failed_add_favorite">Failed Add Favorite</string>
     <string name="success_delete_favorite">Success Delete Favorite</string>
     <string name="failed_delete_favorite">Failed Delete Favorite</string>
+    <string name="delete">Delete Favorite</string>
 </resources>
